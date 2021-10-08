@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "infodatabase",
+  "version": "1.0.0",
+  "description": "A Wikipedia frontend that might pass as a reliable source",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lholliger <14064434+lholliger@users.noreply.github.com>",
+  "license": "MIT"
+}
