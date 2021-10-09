@@ -25,6 +25,10 @@ const paths = [
   {
     "start": "/references",
     "run": import(`./src/paths/references`),
+  },
+  {
+    "start": "/search",
+    "run": import(`./src/paths/search`),
   }
 ]
 
