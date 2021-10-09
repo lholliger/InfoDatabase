@@ -1,5 +1,7 @@
-import {head, body} from "../head.js"
-const About = async function(){
+import head from '../templates/head.html'
+import body from '../templates/body.html'
+
+export default async function main(uri) {
     let content = `${head.replace("%%ARTICLETITLE%%", "About")} ${body.replace("%%ARTICLEINFO%%", "")}
     InfoDatabase is a free online database of information.
     All information published on InfoDatabase comes from our trusted team authors.
@@ -12,5 +14,3 @@ const About = async function(){
       headers: { 'content-type': 'text/html' }
     })
 }
-
-export {About}

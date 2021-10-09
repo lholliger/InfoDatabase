@@ -9,5 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lholliger <14064434+lholliger@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "raw-loader": "^4.0.2"
+  }
 }

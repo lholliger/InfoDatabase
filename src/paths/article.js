@@ -1,6 +1,8 @@
-import {head, body} from "../../head.js"
-import { generateAuthorNameString } from "../../NameGeneration.js"
-const ArticleIndex = async function(uri){
+import head from '../templates/head.html'
+import body from '../templates/body.html'
+import { generateAuthorNameString } from "../NameGeneration.js"
+
+export default async function main(uri) {
     let articleName = uri.split("/")[2]
 
     const author = await generateAuthorNameString(articleName)
@@ -47,5 +49,3 @@ const ArticleIndex = async function(uri){
       headers: { 'content-type': 'text/html' },
     })
 }
-
-export {ArticleIndex}
