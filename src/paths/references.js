@@ -3,8 +3,8 @@ import body from '../templates/body.html'
 
 import { generateAuthorNameString } from "../NameGeneration.js"
 
-export default async function main(uri) {
-    let articleName = uri.split("/")[2]
+export default async function main(url) {
+    let articleName = url.pathname.split("/")[2]
 
     const author = await generateAuthorNameString(articleName)
 
