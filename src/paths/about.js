@@ -1,7 +1,7 @@
 import head from '../templates/head.html'
 import body from '../templates/body.html'
 
-export default async function main(uri) {
+export default async function main(url) {
     let content = `${head.replace("%%ARTICLETITLE%%", "About")} ${body.replace("%%ARTICLEINFO%%", "")}
     InfoDatabase is a free online database of information.
     All information published on InfoDatabase comes from our trusted team authors.

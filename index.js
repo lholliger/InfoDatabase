@@ -33,7 +33,8 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
-  let uri = request.url.replace(/^https:\/\/.*?\//gi, "/");
+  let url = new URL(request.url)
+  let uri = url.pathname;
 
   // this section seems very hacky, would like to replace it with something better
 
@@ -49,10 +50,10 @@ async function handleRequest(request) {
 
   for (let point of paths) {
     if (point.point) {
-      if (point.point == uri) return await serve(point, uri)
+      if (point.point == uri) return await serve(point, url)
     } else if (point.start) {
       if (uri.startsWith(point.start)) {
-        return await serve(point, uri)
+        return await serve(point, url)
       }
     }
   }
