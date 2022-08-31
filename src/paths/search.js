@@ -4,9 +4,9 @@ import body from '../templates/body.html'
 import { generateAuthorNameString } from "../NameGeneration.js"
 
 export default async function main(uri) {
-    let searchQuery = uri.searchParams.get('query')
-    if (searchQuery == undefined){
-      let content = `${head}${body.replace('%%ARTICLEINFO%%','<h3>No search query provided</h3>')}`
+    let searchQuery = uri.searchParams.get('q')
+    if (searchQuery == undefined || searchQuery == ""){
+      let content = `${head.replace("%%ARTICLETITLE%%", `Search`)}${body.replace('%%ARTICLEINFO%%','<form action="/search" method="get"><input name="q" class="xsearch" placeholder="Put your query here"></form><h3>Enter a search in the box above</h3>')}`
       return new Response(content, {
         headers: { 'content-type': 'text/html' }
       })
@@ -25,7 +25,7 @@ export default async function main(uri) {
     </div>
       `);
     }
-    let content = `${head}${body.replace('%%ARTICLEINFO%%',items.join(''))}`
+    let content = `${head.replace("%%ARTICLETITLE%%", `Search for "${searchQuery}"`)}${body.replace('%%ARTICLEINFO%%', `<form action="/search" method="get"><input name="q" class="xsearch" placeholder="Put your query here" value="${searchQuery}"></form>${items.join('')}`)}`
     return new Response(content, {
       headers: { 'content-type': 'text/html' }
     })

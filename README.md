@@ -19,10 +19,10 @@ A rough todo list:
 - [ ] have some basic theming options to match user preference
 - [ ] have buttons to easily generate citations for articles
 - [ ] obfuscate the URL a bit
-- [ ] search
+- [x] search
 - [ ] a better Home and About Us page
-- [ ] move away from a single file for everything
-
+- [x] move away from a single file for everything
+- [ ] easier page generation
 
 
 
