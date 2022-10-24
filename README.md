@@ -33,6 +33,8 @@ I haven't worked much with Workers in the past, so a few things might be missing
 
 *You may need to install Cloudflare's [Wrangler](https://developers.cloudflare.com/workers/get-started/guide#2-install-the-workers-cli) CLI if you haven't already*
 
+**Note: *this project uses Wrangler v1 and has not yet been upgraded to v2!***
+
 You may need to create a `wrangler.toml` file to test the project. Documentation on setting that up can be found on [Cloudflare's website](https://developers.cloudflare.com/workers/get-started/guide#7-configure-your-project-for-deployment)
 
 Make sure to specify `type = webpack` in your wrangler.toml

@@ -36,6 +36,12 @@ export default async function main(url) {
     // clean up ending
     content = content.split(/<h2 id="Notes">Notes<\/h2>|<h2 id="See\_also">See also<\/h2>/)[0]
 
+    let imgs = content.matchAll(/<img.*resource="(.*)".*src="(.*)" decoding.* height="(.*)" width="(.*)" srcset.*1.5x, (.*) 2x".*>/g)
+    for (let img of imgs) {
+        content = content.replace(`src="${img[2]}`, `class="xidbimg" src="${img[5]}`)
+        content = content.replace(`height="${img[3]}" width="${img[4]}"`, 'max-height="25vh"');
+        content = content.replace(`href="${img[1]}"`, "");
+    }
 
     content += `
  <div class='idb-footer'>
