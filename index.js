@@ -23,6 +23,10 @@ const paths = [
     "run": import(`./src/paths/article`),
   },
   {
+    "start": "/quickfacts",
+    "run": import(`./src/paths/quickfacts`),
+  },
+  {
     "start": "/references",
     "run": import(`./src/paths/references`),
   },
