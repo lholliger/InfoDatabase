@@ -6,7 +6,7 @@ body {
     margin: auto;
     margin-bottom: 3rem;
     font-size: 16px;
-    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     overflow-x: hidden;
 }
 
@@ -32,9 +32,10 @@ tbody {
     max-width: 100%;
     overflow:scroll;
 }
-.mw-ref a:after, .infobox, .sistersitebox, .vcard, .navbox, .stub, #coordinates { /* these elements are in limbo to be removed */
+.mw-ref a:after, .sistersitebox, .vcard, .navbox, .stub, .ambox { /* these elements are in limbo to be removed */
     border: 1px solid green;
 }
+
 h1, h2, h3, h4, h5, h6 {
     border-bottom: none !important;
 }
@@ -45,7 +46,7 @@ caption {
 }
 
 /* elements need hiding */
-.mw-reflink-text, .nomobile, .noprint, .reference, .infobox-title, .ambox-content, .hatnote:not(section .hatnote), .mw-linkback-text {
+.mw-reflink-text, .nomobile, .noprint, .reference, .infobox-title, .ambox-content, .hatnote:not(section .hatnote), .mw-linkback-text, #coordinates {
     display: none;
 }
 
@@ -110,6 +111,26 @@ tbody tr:nth-child(odd){
     font-size: 12px;
 }
 
+.gallery li, .multiimageinner div, .tsingle {
+    display: inline-block;
+    padding: 15px;
+    font-size: 12px;
+}
+
+.multiimageinner .trow {
+    display: inline-block;
+    width: 100%;
+}
+
+ul.gallery {
+    list-style: none;
+    padding-left: 0;
+}
+
+figure, .trow {
+    text-align: center;
+}
+
 /* infodatabase-specific */
 
 .idb-header {
@@ -127,6 +148,13 @@ tbody tr:nth-child(odd){
     text-align: center;
 }
 
+.idbquickfact {
+    font-style: italic;
+    font-size: 12px;
+    text-align: center;
+    margin: none;
+}
+
 hr {
     border: none;
     border-top: 1px solid black;
@@ -138,4 +166,20 @@ input.xsearch {
     padding: 5px;
     border: 1px solid gray;
     background: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body, th, td {
+        background-color: #2b2b2b !important;
+        color: #F4F4F4;
+    }
+
+    a, a[rel="mw:WikiLink"], input {
+        color: #F4F4F4;
+    }
+
+    hr {
+        border: 1px solid #F4F4F4;
+    }
+
 }

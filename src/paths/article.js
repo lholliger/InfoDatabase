@@ -33,6 +33,9 @@ export default async function main(url) {
     content = content.replaceAll(/Further information\: /g, "&emsp;&emsp;<b>More information: </b>")
     content = content.replaceAll(/See also\: /g, "&emsp;&emsp;<b>Related: </b>")
 
+    // fix infobox
+    content = content.replace("</style><table class=\"infobox\"", `</style><p class="idbquickfact">Quick Facts about this topic <a href="/quickfacts/${articleName}">here</a>.</p><table style="display: none" class="infobox"`)
+
     // clean up ending
     content = content.split(/<h2 id="Notes">Notes<\/h2>|<h2 id="See\_also">See also<\/h2>/)[0]
 
